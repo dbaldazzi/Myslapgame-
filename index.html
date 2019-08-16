@@ -1,12 +1,30 @@
 <html>
+
 <head>
 	<title>Slap Object Game</title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="">
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="game.css">
 </head>
+
 <body>
-	
-	<script src=""></script>
+	<div class="container-fluid height 100vh bg-primary">
+		<div class="row">
+			<div class="col-6 justify-content-center align-items-center">
+				<img src="medieval-1753740__340.jpg" alt="..." class="img-thumbnail size 200px bg-info">
+				<div class="col-6">
+					<span>Health:<span id="health"></span></span>
+					<div class="col-6">
+						<button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="game.js"></script>
 </body>
+
 </html>
