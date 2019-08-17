@@ -10,21 +10,40 @@
 </head>
 
 <body>
-	<div class="container-fluid height 100vh bg-primary">
-		<div class="row">
-			<div class="col-6 justify-content-center align-items-center">
+	<div class="container-fluid mh-100vh bg-primary">
+		<div class="row justify-content-around height-60vh bg-primary">
+			<div class="col-6">
 				<img src="medieval-1753740__340.jpg" alt="..." class="img-thumbnail size 200px bg-info">
-				<div class="col-6">
-					<span>Health:<span id="health"></span></span>
-					<div class="col-6">
-						<button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
-					</div>
-				</div>
+			</div>
+			<div class="col-6">
+				<img src="playgwent.com_en_1535708549_5b890d85588f67.82784671.jpg" alt=".."
+					class="img-thumbnail size 200px bg-info">
 			</div>
 		</div>
+		<div class="row height vh20 bg-primary">
+			<div class="col-6">
+				<span>Health:<span id="health"></span></span>
+			</div>
+			<div class="col-6">
+				<span>Healthplayer2:<span id="healthplayer2"></span></span>
+			</div>
+		</div>
+		<div class="row h-vh20">
+			<div class="col-6">
+				<button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
+				<button id="punchpl1" class="btn btn-danger" onclick="punchpl1">punch</button>
+				<button id="kickpl1" class="btn btn-danger" onclick="punchpl1">punch</button>
+			</div>
+			<div class="col-6">
+				<button id="slappl2" class="btn btn-danger" onclick="slappl2()">Slap</button>
+				<button id="punchpl2" class="btn btn-danger" onclick="punchpl2">punch</button>
+				<button id="kickpl2" class="btn btn-danger" onclick="kickpl2">punch</button>
+			</div>
+		</div>
+	</div>
 
 
-		<script src="game.js"></script>
+	<script src="game.js"></script>
 </body>
 
 </html>

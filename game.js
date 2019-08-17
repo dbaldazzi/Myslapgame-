@@ -1,3 +1,6 @@
+let healthp1 = "";
+
+
 let players = {
   player1: {
     name: "aa",
@@ -13,12 +16,12 @@ let players = {
 
 //player 1 health function 
 function slap(player1) {
-  let healthp1 = players.player1.initialhealth
-  players.player1.healthp1 -= healthp1
+  let currentHealthp1 = players.player1.initialhealth
+  currentHealthp1--
+  console.log(currentHealthp1)
   draw()
-  console.log(healthp1)
 }
-console.log(players.player1.initialHealth);
+
 
 //player 2 health function 
 function slap2(player2) {
@@ -34,4 +37,8 @@ function draw() {
   let healthValueElement = document.getElementById('health')
   healthValueElement.textContent = `health: ${players.player1.initialHealth}`
   let slapElement = document.querySelector("#slap")
+  let slap2Element = document.querySelector("#slap2")
+  let healthPlayer2ValueElement = document.getElementById('healthPlayer2')
+  healthPlayer2ValueElement.textContent = `healthPlayer2: ${players.player2.initialHealth}`
+
 }
