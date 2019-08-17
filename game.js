@@ -34,14 +34,16 @@ function slap() {
 
 function punchPl1() {
   punchDamagePl1 == player1.punch
-  console.log(player1.punch)
+  player1.initialHealth -= punchDamagePl1
+  console.log(player1.initialHealth)
 
   draw()
 }
 
 function kickPl1() {
   kickDamagePl1 == player1.kick
-  console.log(player1.kick)
+  player1.initialHealth -= kickDamagePl1
+  console.log(player1.initialHealth)
   draw()
 }
 
