@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<div class="container-fluid mh-100vh bg-primary">
+	<div class="container-fluid min-vh-100 bg-primary">
 		<div class="row justify-content-around height-60vh bg-primary">
 			<div class="col-6">
 				<img src="medieval-1753740__340.jpg" alt="..." class="img-thumbnail size 200px bg-info">
@@ -20,7 +20,7 @@
 					class="img-thumbnail size 200px bg-info">
 			</div>
 		</div>
-		<div class="row">
+		<div class="row min-vh-10">
 			<div class="col-6">
 				<span>Name</span><span id="player1Name"></span>
 			</div>
@@ -28,16 +28,16 @@
 				<span>Name</span><span id="player2Name"></span>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row min-vh-10">
 			<div class="col-6">
-				<span>Hits</span><span id="player1Hits"></span>
+				<span>Hits<span id="player1Hits"></span>
 			</div>
 			<div class="col-6">
 				<span>Hits</span><span id="player2Hits"></span>
 			</div>
 		</div>
 
-		<div class="row height vh20 bg-primary">
+		<div class="row min-vh-10 bg-primary">
 			<div class="col-6">
 				<span>Player One Health<span id="healthPlayer2"></span></span>
 			</div>
@@ -45,7 +45,7 @@
 				<span>Player Two Health:<span id="health"></span></span>
 			</div>
 		</div>
-		<div class="row h-vh20">
+		<div class="row min-vh-10">
 			<div class="col-6">
 				<button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
 				<button id="punchPl1" class="btn btn-danger" onclick="punchPl1()">punch</button>

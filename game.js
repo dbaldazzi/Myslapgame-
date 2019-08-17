@@ -4,6 +4,7 @@ let punchDamagePl1 = 5;
 let punchDamagePl2 = 5;
 let kickDamagePl1 = 10;
 let kickDamagePl2 = 10;
+let slapCount = 0;
 
 let player1 = {
   name: "aa",
@@ -28,7 +29,10 @@ function slap() {
   // let currentHealthPl1 = player1.initialHealth
   // currentHealthPl1.initialHealthplayer1--
   currentHealthPl1 == player1.initialHealth--
-  console.log(player1.initialHealth)
+  console.log(player1.initialHealth);
+
+  slapCount == player2.hits++
+  console.log(slapCount)
 
   draw()
 }
@@ -39,6 +43,9 @@ function punchPl1() {
   player1.initialHealth -= punchDamagePl1
   console.log(player1.initialHealth)
 
+  slapCount == player2.hits++
+  console.log(slapCount)
+
   draw()
 }
 
@@ -46,8 +53,12 @@ function kickPl1() {
   kickDamagePl1 == player1.kick
   player1.initialHealth -= kickDamagePl1
   console.log(player1.initialHealth)
+
+  slapCount == player2.hits++
+  console.log(slapCount)
   draw()
 }
+
 
 //player 2 health function 
 function slapPl2() {
@@ -56,6 +67,9 @@ function slapPl2() {
 
   let currentHealthPl2 = player2.initialHealth--
   console.log(player2.initialHealth)
+
+  slapCount == player1.hits++
+  console.log(slapCount)
   draw()
 }
 
@@ -64,6 +78,9 @@ function punchPl2() {
   // player2.initialHealth == punchDamagePl2--
   player2.initialHealth -= punchDamagePl2
   console.log(player2.initialHealth)
+
+  slapCount == player1.hits++
+  console.log(slapCount)
   draw()
 }
 
@@ -71,8 +88,12 @@ function kickPl2() {
   kickDamagePl2 == player2.kick
   player2.initialHealth -= kickDamagePl2
   console.log(player2.initialHealth)
+
+  slapCount == player1.hits++
+  console.log(slapCount)
   draw()
 }
+
 
 function update() {
   currentHealthPl2
