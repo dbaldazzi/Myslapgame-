@@ -1,6 +1,9 @@
 let currentHealthPl1 = 100;
 let currentHealthPl2 = 100;
-
+let punchDamagePl1 = 5;
+let punchDamagePl2 = 5;
+let kickDamagePl1 = 10;
+let kickDamagePl2 = 10;
 
 let player1 = {
   name: "aa",
@@ -29,11 +32,16 @@ function slap() {
 }
 
 
-function punchPl1(player1) {
+function punchPl1() {
+  punchDamagePl1 == player1.punch
+  console.log(player1.punch)
+
   draw()
 }
 
-function kickPl1(player1) {
+function kickPl1() {
+  kickDamagePl1 == player1.kick
+  console.log(player1.kick)
   draw()
 }
 
@@ -41,20 +49,30 @@ function kickPl1(player1) {
 function slapPl2() {
   // let currentHealthPl2 = player2.initialHealth
   // currentHealthPl2--
-  currentHealthPl2 == player2.initialHealth--
+
+  let currentHealthPl2 = player2.initialHealth--
   console.log(player2.initialHealth)
   draw()
 }
 
-function punchPl2(player2) {
+function punchPl2() {
+  punchDamagePl2 == player2.punch
+  // player2.initialHealth == punchDamagePl2--
+  player2.initialHealth -= punchDamagePl2
+  console.log(player2.initialHealth)
   draw()
 }
 
-function kickPl2(player2) {
+function kickPl2() {
+  kickDamagePl2 == player2.kick
+  player2.initialHealth -= kickDamagePl2
+  console.log(player2.initialHealth)
   draw()
 }
 
-console.log(slap)
+function update() {
+  currentHealthPl2
+}
 
 
 function draw() {
@@ -62,7 +80,7 @@ function draw() {
   let healthValueElement = document.getElementById('health')
   healthValueElement.textContent = `: ${player1.initialHealth}`
   let slapElement = document.querySelector("#slap")
-  let punchElement = document.querySelector("#punchPl1")
+  let punchPl1Element = document.querySelector("#punchPl1")
   let kickPl1Element = document.querySelector("#kickPl1")
 
   //plaer 2
