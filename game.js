@@ -11,6 +11,7 @@ let player1 = {
   slap: 1,
   punch: 5,
   kick: 10,
+  hits: 0,
 }
 let player2 = {
   name: "bb",
@@ -18,6 +19,7 @@ let player2 = {
   slapdamage: 1,
   punch: 5,
   kick: 10,
+  hits: 0,
 }
 
 
@@ -84,6 +86,10 @@ function draw() {
   let slapElement = document.querySelector("#slap")
   let punchPl1Element = document.querySelector("#punchPl1")
   let kickPl1Element = document.querySelector("#kickPl1")
+  let player1NameElement = document.getElementById("player1Name")
+  player1NameElement.textContent = `: ${player1.name}`
+  let player1HitsElement = document.getElementById("player1Hits")
+  player1HitsElement.textContent = `: ${player1.hits}`
 
   //plaer 2
 
@@ -92,5 +98,10 @@ function draw() {
   let slapPl2Element = document.querySelector("#slapPl2")
   let punchPl2Element = document.querySelector("#punchPl2")
   let kickPl2Element = document.querySelector("#kickPl2")
+  let player2NameElement = document.getElementById("player2Name")
+  player2NameElement.textContent = `: ${player2.name}`
+  let player2HitsElement = document.getElementById("player2Hits")
+  player2HitsElement.textContent = `: ${player2.hits}`
+
 }
 draw() 
