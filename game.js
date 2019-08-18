@@ -5,9 +5,11 @@ let punchDamagePl2 = 5;
 let kickDamagePl1 = 10;
 let kickDamagePl2 = 10;
 let slapCount = 0;
+let results = "";
 
+//players 
 let player1 = {
-  name: "aa",
+  name: "ORMARR",
   initialHealth: 100,
   slap: 1,
   punch: 5,
@@ -15,25 +17,20 @@ let player1 = {
   hits: 0,
 }
 let player2 = {
-  name: "bb",
+  name: "REGINHARD",
   initialHealth: 100,
   slapdamage: 1,
   punch: 5,
   kick: 10,
   hits: 0,
 }
-
+currentHealthPl1 == player1.initialHealth;
+currentHealthPl2 == player2.initialHealth
 
 //player 1 health function 
 function slap() {
-  // let currentHealthPl1 = player1.initialHealth
-  // currentHealthPl1.initialHealthplayer1--
   currentHealthPl1 == player1.initialHealth--
-  console.log(player1.initialHealth);
-
   slapCount == player2.hits++
-  console.log(slapCount)
-
   draw()
 }
 
@@ -41,62 +38,49 @@ function slap() {
 function punchPl1() {
   punchDamagePl1 == player1.punch
   player1.initialHealth -= punchDamagePl1
-  console.log(player1.initialHealth)
-
   slapCount == player2.hits++
-  console.log(slapCount)
-
   draw()
 }
 
 function kickPl1() {
   kickDamagePl1 == player1.kick
   player1.initialHealth -= kickDamagePl1
-  console.log(player1.initialHealth)
-
   slapCount == player2.hits++
-  console.log(slapCount)
   draw()
 }
 
 
 //player 2 health function 
 function slapPl2() {
-  // let currentHealthPl2 = player2.initialHealth
-  // currentHealthPl2--
-
   let currentHealthPl2 = player2.initialHealth--
-  console.log(player2.initialHealth)
-
   slapCount == player1.hits++
-  console.log(slapCount)
   draw()
 }
 
 function punchPl2() {
   punchDamagePl2 == player2.punch
-  // player2.initialHealth == punchDamagePl2--
   player2.initialHealth -= punchDamagePl2
-  console.log(player2.initialHealth)
-
   slapCount == player1.hits++
-  console.log(slapCount)
   draw()
 }
 
 function kickPl2() {
   kickDamagePl2 == player2.kick
   player2.initialHealth -= kickDamagePl2
-  console.log(player2.initialHealth)
-
   slapCount == player1.hits++
-  console.log(slapCount)
   draw()
 }
 
+//winner function 
+function winner(currentHealthPl1, currentHealthPl2) {
+  if (currentHealthPl1 <= 0) {
+    results == "Player Two"
+  } else if (currentHealthPl2 <= 0) {
+    results === "plyer one"
+  }
 
-function update() {
-  currentHealthPl2
+  console.log(results)
+  draw()
 }
 
 
@@ -124,5 +108,10 @@ function draw() {
   let player2HitsElement = document.getElementById("player2Hits")
   player2HitsElement.textContent = `: ${player2.hits}`
 
+
+  //winner
+  let winnerElement = document.getElementById("winner")
+  winnerElement.textContent = `: ${results}`
 }
-draw() 
+winner()
+draw()
