@@ -25,7 +25,7 @@ let player2 = {
   hits: 0,
 }
 currentHealthPl1 == player1.initialHealth;
-currentHealthPl2 == player2.initialHealth
+currentHealthPl2 == player2.initialHealth;
 
 //player 1 health function 
 function slap() {
@@ -79,7 +79,6 @@ function winner(currentHealthPl1, currentHealthPl2) {
     results === "plyer one"
   }
 
-  console.log(results)
   draw()
 }
 
