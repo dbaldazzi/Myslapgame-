@@ -1,4 +1,3 @@
-
 // Player info
 let player = {
   name: "Ormarr",
@@ -30,10 +29,6 @@ function givesLance() {
   player.items.push(items.lance)
 }
 
-function takeShield() {
-  player.items.push(items.lance)
-}
-
 //added item buttons 
 function sword() {
   giveSword()
@@ -55,8 +50,7 @@ function addMods() {
   return addModsTotal
 }
 
-
-
+//player action functions that work with action buttons
 //slap function 
 function slap() {
   let slapDamage = player.slap
@@ -90,9 +84,9 @@ function kick() {
   call()
 }
 
-
+//player 1
 function call() {
-  //player 1
+
   let healthValueElement = document.getElementById('health')
   healthValueElement.textContent = `: ${player.health}`
   let slapElement = document.querySelector("#slap")
@@ -108,14 +102,13 @@ function call() {
   let resetElement = document.querySelector("#reset")
 }
 
+//game update 
 function upDate() {
   player.health
-
   call()
 
 }
-
-console.log(player.health)
+//game reset
 function reset() {
   window.location.reload(false);
   call()
@@ -123,4 +116,3 @@ function reset() {
 
 call()
 upDate()
-console.log(player)
