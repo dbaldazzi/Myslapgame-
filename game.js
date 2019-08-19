@@ -1,116 +1,126 @@
-let currentHealthPl1 = 100;
-let currentHealthPl2 = 100;
-let punchDamagePl1 = 5;
-let punchDamagePl2 = 5;
-let kickDamagePl1 = 10;
-let kickDamagePl2 = 10;
-let slapCount = 0;
-let results = "";
 
-//players 
-let player1 = {
-  name: "ORMARR",
-  initialHealth: 100,
+// Player info
+let player = {
+  name: "Ormarr",
+  health: 100,
   slap: 1,
   punch: 5,
   kick: 10,
   hits: 0,
-}
-let player2 = {
-  name: "REGINHARD",
-  initialHealth: 100,
-  slapdamage: 1,
-  punch: 5,
-  kick: 10,
-  hits: 0,
-}
-currentHealthPl1 == player1.initialHealth;
-currentHealthPl2 == player2.initialHealth;
-
-//player 1 health function 
-function slap() {
-  currentHealthPl1 == player1.initialHealth--
-  slapCount == player2.hits++
-  draw()
+  items: []
 }
 
-
-function punchPl1() {
-  punchDamagePl1 == player1.punch
-  player1.initialHealth -= punchDamagePl1
-  slapCount == player2.hits++
-  draw()
+//items info
+let items = {
+  sword: { name: 'sword', modifier: 3, description: 'long sword' },
+  shield: { name: 'shield', modifier: 5, description: 'medieval Scutum shield' },
+  lance: { name: 'Lance', modifier: 2, destription: '8 foot lance' },
 }
 
-function kickPl1() {
-  kickDamagePl1 == player1.kick
-  player1.initialHealth -= kickDamagePl1
-  slapCount == player2.hits++
-  draw()
+//functions giving objects to player
+//give sword
+function giveSword() {
+  player.items.push(items.sword)
+}
+function givesShield() {
+  player.items.push(items.shield)
+
+}
+function givesLance() {
+  player.items.push(items.lance)
 }
 
-
-//player 2 health function 
-function slapPl2() {
-  let currentHealthPl2 = player2.initialHealth--
-  slapCount == player1.hits++
-  draw()
+function takeShield() {
+  player.items.push(items.lance)
 }
 
-function punchPl2() {
-  punchDamagePl2 == player2.punch
-  player2.initialHealth -= punchDamagePl2
-  slapCount == player1.hits++
-  draw()
+//added item buttons 
+function sword() {
+  giveSword()
+}
+function shield() {
+  givesShield()
+}
+function lance() {
+  givesLance()
 }
 
-function kickPl2() {
-  kickDamagePl2 == player2.kick
-  player2.initialHealth -= kickDamagePl2
-  slapCount == player1.hits++
-  draw()
-}
-
-//winner function 
-function winner(currentHealthPl1, currentHealthPl2) {
-  if (currentHealthPl1 <= 0) {
-    results == "Player Two"
-  } else if (currentHealthPl2 <= 0) {
-    results === "plyer one"
+//function for adding mods from items object to player items array
+function addMods() {
+  let addModsTotal = 0;
+  for (let i = 0; i < player.items.length; i++) {
+    let item = player.items[i];
+    addModsTotal += item.modifier;
   }
-
-  draw()
+  return addModsTotal
 }
 
 
-function draw() {
+
+//slap function 
+function slap() {
+  let slapDamage = player.slap
+  player.health -= slapDamage - addMods()
+  let hits = player.hits
+  hits == player.hits++
+  player.items = [];
+  console.log(player.health)
+  call()
+}
+
+//punch function 
+function punch() {
+  let punchDamage = player.punch
+  player.health -= punchDamage - addMods()
+  let hits = player.hits
+  hits == player.hits++
+  player.items = [];
+  console.log(player.health)
+  call()
+}
+
+//kick function 
+function kick() {
+  let kickDamage = player.kick
+  player.health -= kickDamage - addMods()
+  let hits = player.hits
+  hits == player.hits++
+  player.items = [];
+  console.log(player.health)
+  call()
+}
+
+
+function call() {
   //player 1
   let healthValueElement = document.getElementById('health')
-  healthValueElement.textContent = `: ${player1.initialHealth}`
+  healthValueElement.textContent = `: ${player.health}`
   let slapElement = document.querySelector("#slap")
-  let punchPl1Element = document.querySelector("#punchPl1")
-  let kickPl1Element = document.querySelector("#kickPl1")
-  let player1NameElement = document.getElementById("player1Name")
-  player1NameElement.textContent = `: ${player1.name}`
-  let player1HitsElement = document.getElementById("player1Hits")
-  player1HitsElement.textContent = `: ${player1.hits}`
-
-  //plaer 2
-
-  let healthPlayer2ValueElement = document.getElementById('healthPlayer2')
-  healthPlayer2ValueElement.textContent = `: ${player2.initialHealth}`
-  let slapPl2Element = document.querySelector("#slapPl2")
-  let punchPl2Element = document.querySelector("#punchPl2")
-  let kickPl2Element = document.querySelector("#kickPl2")
-  let player2NameElement = document.getElementById("player2Name")
-  player2NameElement.textContent = `: ${player2.name}`
-  let player2HitsElement = document.getElementById("player2Hits")
-  player2HitsElement.textContent = `: ${player2.hits}`
-
-
-  //winner
-  let winnerElement = document.getElementById("winner")
-  winnerElement.textContent = `: ${results}`
+  let punchPl1Element = document.querySelector("#punch")
+  let kickPl1Element = document.querySelector("#kick")
+  let targetNameElement = document.getElementById("targetName")
+  targetNameElement.textContent = `: ${player.name}`
+  let totalHitsElement = document.getElementById("totalHits")
+  totalHitsElement.textContent = `: ${player.hits}`
+  let shieldElement = document.querySelector("#shield")
+  let swordElement = document.querySelector("#sword")
+  let lanceElement = document.querySelector("#lance")
+  let resetElement = document.querySelector("#reset")
 }
-winner()
-draw()
+
+function upDate() {
+  player.health
+
+  call()
+
+}
+
+console.log(player.health)
+function reset() {
+  window.location.reload(false);
+  call()
+}
+
+call()
+upDate()
+console.log(player)
