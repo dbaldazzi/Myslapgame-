@@ -15,36 +15,39 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row justify-content-center min-vh-60 bg-primary">
-      <div class="col-4 align-self-center">
+    <div class="row justify-content-around min-vh-60">
+      <div class="col-4">
+      </div>
+      <div class="col-4 text-center">
         <img src="medieval-1753740__340.jpg" class="img-thumbnail size 200px bg-info">
       </div>
-      <div class="col-8">
+      <div class="col-4 text-white">
         <h1><span>Health</span><span id="health"></span></h1>
         <h1><span>HITS</span><span id="totalHits"></span></h1>
         <h1><span>TARGET NAME</span><span id="targetName"></span></h1>
       </div>
-      <div class="row actions mt-5 d-flex justify-content-around">
-        <div class="col-12">
-          <button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
-          <button id="punch" class="btn btn-danger" onclick="punch()">punch</button>
-          <button id="kick" class="btn btn-danger" onclick="kick()">kick</button>
-          <button id="sword" class="btn btn-danger" onclick="sword()">Sword</button>
-          <button id="shield" class="btn btn-danger" onclick="shield()">Shield</button>
-          <button id="lance" class="btn btn-danger" onclick="lance()">Lance</button>
-        </div>
-        <div class="col-12 mt-5">
-          <button id="reset" class="btn btn-info" onclick="reset()">reset</button>
-        </div>
-
-
-
-      </div>
     </div>
+    <div class="row actions min-vh-40 mt-5 d-flex justify-content-around text-center text-primary">
+      <div class="col-12 justify-content-around">
+        <button id="slap" class="btn btn-danger" onclick="slap()">slap</button>
+        <button id="punch" class="btn btn-danger" onclick="punch()">punch</button>
+        <button id="kick" class="btn btn-danger" onclick="kick()">kick</button>
+        <button id="sword" class="btn btn-danger" onclick="sword()">Sword</button>
+        <button id="shield" class="btn btn-danger" onclick="shield()">Shield</button>
+        <button id="lance" class="btn btn-danger" onclick="lance()">Lance</button>
+      </div>
+      <div class="col-12 mt-5 text-center">
+        <button id="reset" class="btn btn-info" onclick="reset()">reset</button>
+      </div>
 
 
 
-    <script src="game.js"></script>
+    </div>
+  </div>
+
+
+
+  <script src="game.js"></script>
 </body>
 
 </html>
