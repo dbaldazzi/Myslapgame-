@@ -80,12 +80,13 @@ function kickPl2() {
 
 //winner function 
 function winner(currentHealthPl1, currentHealthPl2) {
+  let results = ''
   if (currentHealthPl1 <= 0) {
-    results === "Player Two"
+    results = "Player Two"
   } else if (currentHealthPl2 <= 0) {
-    results === "player one"
+    results = "player one"
   }
-
+  return results
 
 }
 // @ts-ignore
@@ -118,6 +119,7 @@ function draw() {
 
 
   //winner
+  let results = winner()
   let winnerElement = document.getElementById("winner")
   winnerElement.textContent = `: ${results}`
 }

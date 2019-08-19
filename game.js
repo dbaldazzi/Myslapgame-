@@ -100,6 +100,8 @@ function call() {
   let swordElement = document.querySelector("#sword")
   let lanceElement = document.querySelector("#lance")
   let resetElement = document.querySelector("#reset")
+  let progressElement = document.getElementById('progress')
+  progressElement.textContent = `${player.health}`
 }
 
 //game update 
